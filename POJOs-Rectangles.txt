@@ -1,0 +1,1248 @@
+
+
+=================================================
+
+=================================================
+
+
+=================================================
+Implementing Credit Card Validation:  Use Long not int!!
+
+package creditCard1;
+
+// Bluej project: lesson6/credit_card1
+// Video: Sum Every Other Digit
+
+// TODO: Implement the sumCertainDigits method.
+public class CreditCard
+{
+    private long cardNumber;
+
+    public CreditCard(long cardNumber)
+    {
+        this.cardNumber = cardNumber;
+    }
+
+    /**
+     * Calculates the sum of ever other digit in cardNumber 
+     * starting from the rightmost digit.
+     * @return the sum of every other digit starting from the rightmost.
+     */
+    public int sumCertainDigits()
+    {
+     
+
+ // So that we don't accidentally change the credit card number,
+        // make a copy called n. 
+        long n = cardNumber;    // eg: 1234567890123456
+        
+        // TODO this is the code from the a previous video. You can use it
+        // as a starting point, but you will need to change a lot.
+        // Change this method so that it will calculate the sum of every
+        // second digit instead of all the digits, and then return this 
+        // special sum. 
+        // for example, if n is 12345, this method should return the sum 
+        // 5 + 3 + 1
+        // There are links to videos with hints above the submit button. 
+        // Use them if you want more inspiration.
+        int sum = 0;
+        int count = 0;
+        while (n > 0)
+        {             
+            if (count % 2 == 0)
+            {
+            	int digit = (int)(n % 10);
+            	sum = sum + digit;
+            }
+            n = n/10;
+        	count ++;
+        }
+        return sum;
+    }
+}
+Implementing Credit Card Validation:
+
+
+
+
+
+=================================================
+ //System.out.println("   +--------+");
+   //System.out.println("   |Udacity|");
+   //System.out.println("   +--------+");
+  // System.out.println("   +--------+");
+    
+    
+    //String course = ("Udacity");
+     //String greeting3 = course.toLowerCase();
+     //System.out.print(  greeting3);
+
+//Graphics2D g2 = (Graphics2D) g;
+    //Rectangle box = new Rectangle( 50 , 100 , 20 , 30 );
+    //Rectangle box2 = box;
+    //box2.translate(15,25);
+    //System.out.println(box.getY());
+    //System.out.println(box2.getY());
+ // System.out.println( "  X: " + box.getX() + "  Y: " +  box.getY() + "   Width:  " +  box.getWidth() +  "   Height:  " + box.getHeight() );   
+  //box.draw();   System.out.println(box);
+  //box.translate( 15 , 25 );
+  //System.out.println( "  X: " + box.getX() + "  Y: " +  box.getY() + "   Width:  " +  box.getWidth() +  "   Height:  " + box.getHeight() );   
+  //box.draw( );  System.out.println(box);
+  
+  
+    //Rectangle box = new Rectangle (50,100,20,30);
+    
+    //Rectangle box2 = box.grow (15,25);
+     //String course = "Udacity"; //do not modify this line in any way
+
+        //TODO complete the code to replace the first occurence of 'a' with an 'x'
+        //and don't forget to print it out!
+          
+        //String nsp = "ant";
+        
+     //System.out.println (course.replace ("a" , "x")  );
+     //System.out.println();
+        //System.out.println (nsp.replace ("a" , "x")    );
+    //System.out.println(" Box  X " + box.getX());           System.out.println(" Box  2 " + box2.getX());          
+    //System.out.println(" Box  X " + box.getY());           System.out.println(" Box  2 " + box2.getX());          
+    //System.out.println(" Box  X " + box.getWidth());  System.out.println(" Box  2 " + box2.getX());     
+    //System.out.println(" Box  X " + box.getHeight()); System.out.println(" Box  2 " + box2.getX());   
+   
+    
+  //Rectangle box = new Rectangle(20,20,10,10);
+  //Rectangle box1 = new Rectangle(45, 45,10,10);
+ // Rectangle box2= new Rectangle(60,60 ,10,10);
+ // Rectangle box3= new Rectangle(80,80,10,10);
+  
+ 
+ //box.setColor(new Color ( 0 , 255 , 255));  //dpublic Rectangle()
+    //{
+      //  x = 0;
+     //   y = 0;
+    //    width = 0;
+     //   height = 0;
+    //}       raw red box
+// box.fill( );
+// box1.setColor(new Color ( 255 , 255 , 0));  //draw red box
+ //box1.fill( );
+ //box2.setColor(new Color ( 255 , 0 ,255 ));  //draw red box
+ //box2.fill( );
+ //box3.setColor(new Color ( 255 , 255  ,  0));  //draw red box
+ //box3.fill( );
+ 
+ 
+ 
+ 
+ //box2.setColor(new Color ( 0,255,0) );   //fill green box
+ //box2.fill();
+
+ 
+        // You need to print out the following values of box and its expected values:
+        //
+        // X, by using box.getX();
+        // Y, by using box.getY();
+        // width, by using box.getWidth();
+        // height, by using box.getHeight();
+        // 
+        // To print out a value and its expected value, use System.out.println(...);
+        // For example:
+        // System.out.println(box.getY());
+        // System.out.println("Expected: " + 50);
+        // 
+  // Print out the actual and test values below this line:
+
+=================================================
+
+
+Start of Lesson 3  Classes:  most recent on top.
+=================================================
+public class WViewer
+{
+   public static void main(String[] args)
+   {
+       // TODO: Write the code to draw a symmetrical letter W with 4 line segments.
+    
+        new Line(0,0,10,30).draw();
+        new Line(10,30,20,0).draw();
+        new Line(20,0,30,30).draw();
+        new Line(30,30,40,0).draw();      
+   }
+}
+ 
+
+
+=================================================
+X  Y
+0  4
+2  0
+4  4
+6  0
+8  4
+-----------------------------------------
+
+/**
+   A simulated car that consumes gas as it drives.
+*/
+public class Car
+{
+    private double milesDriven;
+    private double gasInTank;
+    private double milesPerGallon;
+   
+
+    /**
+       Constructs a car with a given fuel efficiency.
+    */
+    public Car(double mpg)
+    {
+        milesDriven = 0;
+        gasInTank = 0;
+        milesPerGallon = mpg;
+    }
+
+  
+    /**
+      TODO: Add your documentation for the addGas class
+      Don't forget to explain what the input paramater
+      amount means or does
+      -Your documentation here!-
+      Increases gasInTank for purchased gas.
+      @param  amount -  purchased gas to add
+    */
+   
+    public void addGas(double amount)
+    {
+        gasInTank = gasInTank + amount;
+    }
+
+    /**
+      Gets the current amount of gas in the tank of this car.
+      @return the current gas level
+    */
+    public double getGasInTank()
+    {
+        return gasInTank;
+    }
+
+    /**
+      Drives this car by a given distance.
+      @param distance the distance to drive
+    */
+    public void drive(double distance)
+    {
+        this.milesDriven = this.milesDriven + distance;
+        double gasConsumed = distance / this.milesPerGallon;
+        this.gasInTank = this.gasInTank - gasConsumed;
+    }  
+
+    /**
+      Gets the current mileage of this car.
+      @return the total number of miles driven
+    */
+    public double getMilesDriven()
+    {
+        return milesDriven;
+    }
+}
+
+============================================
+public class Square {
+     int length_of_each_side;
+
+     public Square() {
+     ...
+     }
+
+     public Square(int length) {
+     ...
+     }
+}
+
+
+// You are to write the constructor specified for this Square class. The Square class 
+// has an instance variable of type double, side, which is the length public class Square {
+     int length_of_each_side;
+
+     public Square() {
+     ...
+     }
+
+     public Square(int length) {
+     ...
+     }
+}of each side of 
+// the square. The javadoc has been provided for you to help you tell what you needs to
+// be done
+//     
+// HINT: Write the constructor for the class Square.
+// The constructor will take in a parameter of the type double
+// and assign that parameter to the instance variable side
+//
+    
+    
+public class Square
+{
+    private double side;
+
+    /**
+     * Constructor for objects of class Square
+     * @param theSide the length of the side of this Square
+     */
+     
+    public class Square(double side)
+    {
+    
+    
+      // your code goes below:
+    }
+
+      /**
+       * Gets the length of a side of this square
+       * @return the side of this square
+      */
+     } 
+      public double getSide()
+      {
+          return side;
+      }
+}
+
+
+
+=================================================
+public class WhatDayWillItBe
+{
+public static void main(String[] args)
+{
+// Day birthday = new Day(1989, 7, 1);
+// int weekday = (22 + (365*89) + 31 + 28 + 31 + 30 + 31 + 30 + 1);
+// weekday = weekday % 7;
+Day referenceDay = new Day (1900, 1, 1);
+Day desiredDay = new Day (1983, 6, 18);
+int daysBetween = desiredDay.daysFrom(referenceDay);
+int weekday = (daysBetween + 1) % 7;
+
+=================================================
+
+public static void main(String[] args)
+{
+    Color custom = new Color(125,125,255);
+    Color[] colors = {Color.BLUE, Color.MAGENTA, Color.CYAN, Color.RED, Color.PINK, custom};
+
+    int blockWidth = 40;
+    int blockHeight = 30;
+    int startX = 20;
+    int startY = 70;
+    Rectangle[] rArray = new Rectangle[6];
+
+    int i = 0;
+    for (Rectangle r: rArray) {
+        r = new Rectangle(
+            startX 
+            + blockWidth * ( i % 3 )
+            + blockWidth / 2 * ( i / 3 )
+            - blockWidth * 1.5 * ( i / 5 )
+            ,
+            startY
+            - blockHeight * (i/3) 
+            - blockHeight * (i/5)
+            , blockWidth, blockHeight);
+
+        r.setColor(colors[i]);
+        r.fill();
+        i++;
+    }Rectangle box = new Rectangle(20, 70, 40, 30);
+Rectangle box2 = new Rectangle(60, 70, 40, 30);
+Rectangle box3 = new Rectangle(100, 70, 40, 30);
+Rectangle box4 = new Rectangle(40, 40, 40, 30);
+Rectangle box5 = new Rectangle(80, 40, 40, 30);
+Rectangle box6 = new Rectangle(60, 10, 40, 30);
+box.draw();
+box2.draw();
+box3.draw();
+box4.draw();
+box5.draw();
+box6.draw();
+box.setColor(new Color(0, 0, 255));
+box2.setColor(new Color(255, 0, 255));
+box3.setColor(new Color(0, 255, 255));
+box4.setColor(new Color(255, 0, 0));
+box5.setColor(new Color(255, 192, 203));
+box6.setColor(new Color(125, 125, 255));
+box.fill();
+box2.fill();
+box3.fill();
+box4.fill();
+box5.fill();
+box6.fill();
+
+
+}
+
+=================================================
+
+Rectangle box = new Rectangle(60,90,20,30);
+   Rectangle box2 = new Rectangle(80,120,20,30);
+   //box.draw();  
+   //box2.draw();
+ 
+ box.setColor(new Color ( 255,0,0));  
+ box.draw();
+ box2.setColor(new Color ( 0,255,0) );   //fill green box
+ box2.fill();
+
+import predefined.Rectangle;
+import predefined.Color;
+
+    public class BlockTower
+    {
+    public static void main(String[] args)
+    {
+        //TODO finish the draft to display the six blocks
+        
+   
+        Rectangle baseOne = new Rectangle(20,70,40,30);
+        Rectangle baseTwo = new Rectangle(60,70,40,30);
+        Rectangle baseThree = new Rectangle(100,70,40,30);
+        Rectangle middleOne = new Rectangle(40,40,40,30);
+        Rectangle middleTwo = new Rectangle(80,40,40,30);
+        Rectangle top = new Rectangle(60,10,40,30);
+        
+        Color custom = new Color(125,125,255);
+        
+        baseOne.setColor(Color.BLUE);
+        baseTwo.setColor(Color.MAGENTA);
+        baseThree.setColor(Color.CYAN);
+        middleOne.setColor(Color.RED);
+        middleTwo.setColor(Color.PINK);
+        top.setColor(custom);
+        
+        baseOne.fill();
+        baseTwo.fill();
+        baseThree.fill();
+        middleOne.fill();
+        middleTwo.fill();
+        top.fill();
+        
+    }
+}       
+
+=================================================
+
+// Write the code to draw a tower of blocks that looks like the one in the link below:
+// http://i.imgur.com/PvIGJkL.png
+    
+// Name the class BlockTower. Each block has a width of 40 and a height of 30. 
+// There are three rows. The upper left-hand corner of the bottom row is at (20, 70)
+
+// Create a custom color for the topmost color where red = 125, green=125, blue = 255. 
+// For all the other colors, use predefined colors. 
+// The colors from top to bottom are: custom, RED, PINK, BLUE, MAGENTA, CYAN
+
+
+// HIN
+// The bottom left rectangle should have the attributes:
+// x: 20
+// y: 70
+// width: 40
+// height: 30
+//
+// You should set the color of the rectangle to blue by using the method:
+// setColor(Color.somecolor); on the rectangle object that you created
+//
+// Don't forget to draw the rectangle by calling the fill() function
+
+
+
+
+public class BlockTower
+{
+    public static void main(String[] args)
+    {
+        //TODO finish the draft to display the six blocks
+    }
+}
+
+
+=====================(custom1);============================
+
+
+public class RectangleDemo extends JComponent {
+
+  public static void main(String args[])
+
+ Rectangle box = new Rectangle(60,90,20,30);
+   Rectangle box2 = new Rectangle(80,120,20,30);
+   //box.draw();  
+   //box2.draw();
+ 
+ box.setColor(new Color ( 255,0,0));  
+ box.draw();
+ box2.setColor(new Color ( 0,255,0) );   //fill green box
+ box2.fill();
+(custom1);
+Box:  	RGB Color
+Box 1		30,	144,	255
+Box 2		220,	20,	60
+Box 3		255,	180,	193
+Box 4		39,	64,	179
+Box 5		255,	62,	179
+Box 6		0,		245,	255
+
+
+
+
+Color definitions	(RGB Values)
+Color		Red, Green, Blue
+Red		255,0,0
+Green		0,255,0
+BLUE		0,0,255
+Yellow	255,255,0
+Black		0,0,0	
+White		255,255,255
+Gray		128,128,128
+Magenta  255,0,255 
+Cyan	   0,255,255
+Rectangle box = new Rectangle(20, 70, 40, 30);
+Rectangle box2 = new Rectangle(60, 70, 40, 30);
+Rectangle box3 = new Rectangle(100, 70, 40, 30);
+Rectangle box4 = new Rectangle(40, 40, 40, 30);
+Rectangle box5 = new Rectangle(80, 40, 40, 30);
+Rectangle box6 = new Rectangle(60, 10, 40, 30);
+box.draw();
+box2.draw();
+box3.draw();
+box4.draw();
+box5.draw();
+box6.draw();
+box.setColor(new Color(0, 0, 255));
+box2.setColor(new Color(255, 0, 255));
+box3.setColor(new Color(0, 255, 255));
+box4.setColor(new Color(255, 0, 0));
+box5.setColor(new Color(255, 192, 203));
+box6.setColor(new Color(125, 125, 255));
+box.fill();
+box2.fill();
+box3.fill();
+box4.fill();
+box5.fill();
+box6.fill();
+
+
+see also 500 + named colours with rgb and hex values.pdf
+
+box.draw();  draw outline of designated color
+ Left
+ box2.fill();  draw filled box of designated color
+
+
+
+
+
+=================================================
+http://docs.oracle.com/javase/7/docs/api/java/lang/String.html
+
+Method Summary
+
+Methods 
+Modifier and Type	Method and Description
+Method
+Modifier and type    Method and Description 
+char						charAt(int index)
+Returns the char value at the specified index.
+
+   Rectangle box = new Rectangle( 50 , 100 , 20 , 30 );
+  System.out.println( "  X: " + box.getX() + "  Y: " +  box.getY() + "   Width:  " +  box.getWidth() +  "   Height:  " + box.getHeight() );   
+  box.draw();   System.out.println(box);
+  box.grow( 15 , 25 );
+  System.out.println( "  X: " + box.getX() + "  Y: " +  box.getY() + "   Width:  " +  box.getWidth() +  "   Height:  " + box.getHeight() );   
+  box.draw( );  System.out.println(box);
+
+		run RectangleDemo:   Grow
+     	X: 50  Y: 100   Width:  20   Height:  30
+		Rectangle[x=50,y=100,width=20,height=30]
+  		X: 35  Y: 75   Width:  50   Height:  80
+		Rectangle[x=35,y=75,width=50,height=80]
+
+ Rectangle box = new Rectangle( 50 , 100 , 20 , 30 );
+ System.out.println( "  X: " + box.getX() + "  Y: " +  box.getY() + "   Width:  " +  box.getWidth() +  "   Height:  " + box.getHeight() );   
+ box.draw();   System.out.println(box);
+ box.translate( 15 , 25 );
+ System.out.println( "  X: " + box.getX() + "  Y: " +  box.getY() + "   Width:  " +  box.getWidth() +  "   Height:  " + box.getHeight() );   
+ box.draw( );  System.out.println(box);
+
+ 	run RectangleDemo:  Translate
+ 	X: 50  Y: 100   Width:  20   Height:  30
+	Rectangle[x=50,y=100,width=20,height=30]
+  	X: 65  Y: 125   Width:  20   Height:  30
+	Rectangle[x=65,y=125,width=20,height=30]
+
+
+=================================================
+Lesson 2 Summary  Udacity Lesson 2
+Wow, we learned a whole ton of information in Lesson 2! Let's review what we just learned.
+
+How to construct a new objects that require constructors in one line:
+
+A. For objects that require constructors (e.g. Picture)
+Picture rocket = new Picture(“mariner4.jpg”);
+Picture: Here we’re telling Java the type of the object we want to construct.
+rocket: Here we’re naming the object.
+new: Here we’re adding a keyword that tells Java to make a new object.
+Picture: Here we’re calling the constructor for the Picture class. What this means is that in the Picture class there is a chunk of code that reads: “public Picture(...) {...}”, and contains information within the brackets about how to actually construct the Picture class from the argument passed in between the parentheses. Don’t worry if this isn’t 100% clear right now; we’ll get plenty of practice with this throughout the rest of the course!
+"mariner4.jpg": This is just the necessary argument passed into the Picture constructor.
+B. For objects that do NOT require constructors (e.g. String) or non-objects (e.g. int):
+int number = 6;
+String name = “Dan”;
+int/String: The type of the object (or non-object) we’re constructing.
+number/name: The name of the object (or non-object)
+6/"Dan": The value of the object (or non-object)
+What do we mean when we say integers are not “objects”? Read on to find out.
+
+Calling methods on “objects”
+For either mutator or accessor methods, use the syntax “.” to call the method named Method on the object named Object.
+Now, what do we mean when we say “integers are not objects”? By definition, objects are “things you can call methods on”, and there are no methods you can call on an integer. For example, after writing
+
+int number = 6;
+We cannot write things like:
+
+number.multiply(4);
+number.add(3);
+Instead, we write:
+
+number = number * 4;
+number = number + 3;
+Variables and references
+A common procedure in Java is to construct an object, assign that object “equal to” another object, and then modify the first object. However, if you then change the first object with the mutator object, it changes the second object as well, counterintuitively.
+
+Example:
+
+For objects that are constructed (e.g. Rectangle) and have mutator methods called on them:
+
+rectangle rect1 = new Rectangle(0,0,50,50); //Constructs the Rectangle
+rect2 = rect1; // ”rect1” and “rect2” now “point to” the same Rectangle object
+rect1.translate(10); //the object that both “rect1” and “rect2” both refer to is now translated by 10 units.
+This produces:
+
+rect1.getX();
+10 (int)
+rect2.getX();
+10 (int)
+Key Methods from Lesson 2:
+How to draw an object, with or without “filling” it, and how to set the color of an object:
+
+obj.draw(); //draws the object called “obj”
+obj.fill(); //draws the object called “obj”, filled in
+obj.setColor(new Color(redValue, greenValue, blueValue));  // sets the color of “obj” to the color defined by the red-green-blue combination defined in the constructor
+Setting the color could also be done on two lines as:
+ Rectangle box = new Rectangle(60,90,20,30);
+   Rectangle box2 = new Rectangle(80,120,20,30);
+   //box.draw();  
+   //box2.draw();
+ 
+ box.setColor(new Color ( 255,0,0));  //draw red box
+ box.draw();Rectangle box = new Rectangle(20, 70, 40, 30);
+Rectangle box2 = new Rectangle(60, 70, 40, 30);
+Rectangle box3 = new Rectangle(100, 70, 40, 30);
+Rectangle box4 = new Rectangle(40, 40, 40, 30);
+Rectangle box5 = new Rectangle(80, 40, 40, 30);
+Rectangle box6 = new Rectangle(60, 10, 40, 30);
+box.draw();
+box2.draw();
+box3.draw();
+box4.draw();
+box5.draw();
+box6.draw();
+box.setColor(new Color(0, 0, 255));
+box2.setColor(new Color(255, 0, 255));
+box3.setColor(new Color(0, 255, 255));
+box4.setColor(new Color(255, 0, 0));
+box5.setColor(new Color(255, 192, 203));
+box6.setColor(new Color(125, 125, 255));
+box.fill();
+box2.fill();
+box3.fill();
+box4.fill();
+box5.fill();
+box6.fill();
+
+
+ box2.setColor(new Color ( 0,255,0) );   //fill green box
+ box2.fill();
+
+Color definitions	(RGB Values)
+Color		Red, Green, Blue
+Red		255,0,0
+Green		0,255,0
+BLUE		0,0,255
+Yellow	255,255,0
+Black		0,0,0	Rectangle box = new Rectangle(20, 70, 40, 30);
+Rectangle box2 = new Rectangle(60, 70, 40, 30);
+Rectangle box3 = new Rectangle(100, 70, 40, 30);
+Rectangle box4 = new Rectangle(40, 40, 40, 30);
+Rectangle box5 = new Rectangle(80, 40, 40, 30);
+Rectangle box6 = new Rectangle(60, 10, 40, 30);
+box.draw();
+box2.draw();
+box3.draw();
+box4.draw();
+box5.draw();
+box6.draw();
+box.setColor(new Color(0, 0, 255));
+box2.setColor(new Color(255, 0, 255));
+box3.setColor(new Color(0, 255, 255));
+box4.setColor(new Color(255, 0, 0));
+box5.setColor(new Color(255, 192, 203));
+box6.setColor(new Color(125, 125, 255));
+box.fill();
+box2.fill();
+box3.fill();
+box4.fill();
+box5.fill();
+box6.fill();
+
+
+White		255,255,255
+Gray		128,128,128
+Magenta  255,0,255 
+Cyan	   0,255,255
+
+see also 500 + named colours with rgb and hex values.pdf
+
+box.draw();  draw outline of designated color
+ 
+ box2.fill();  draw filled box of designated color
+
+Color color1 = new Color(redValue, greenValue, blueValue);
+obj.setColor(color1);
+
+
+=================================================
+
+	  Rectangle box = new Rectangle(60,90,20,30);
+   Rectangle box2 = new Rectangle(80,120,20,30);
+   //box.draw();  
+   //box2.draw();
+ 
+ box.setColor(new Color ( 255,0,0));  //draw red box
+ box.draw();
+ box2.setColor(new Color ( 0,255,0) );   //fill green box
+ box2.fill();
+
+Color definitions	(RGB Values)
+Color		Red, Green, Blue
+Red		255,0,0
+Green		0,255,0
+BLUE		0,0,255
+Yellow	255,255,0
+Black		0,0,0	
+White		255,255,255
+Gray		128,128,128
+Magenta  255,0,255 
+Cyan	   0,255,255
+
+see also 500 + named colours with rgb and hex values.pdf
+
+box.draw();  draw outline of designated color
+ 
+ box2.fill();  draw filled box of designated color
+
+
+
+=================================================
+public class DrawACrate
+{
+    public static void main(String[] args)
+    {
+	        Rectangle frontFace = new Rectangle(20, 30 ,100, 40);
+        Line leftLine = new Line(20, 30, 50, 10);
+        Line topLine = new Line(50, 10, 150, 10);
+        Line middleLine = new Line(120, 30, 150, 10);
+        Line rightLine = new Line(150, 10, 150, 50);
+        Line bottomLine = new Line(120, 70, 150, 50);
+        Text topSecret = new Text (20,30,"TOP SECRET");
+
+        frontFace.draw();
+        leftLine.draw();
+        topLine.draw();
+        middleLine.draw();
+        rightLine.draw();
+        bottomLine.draw();
+        topSecret.draw();
+ }
+}
+
+=================================================
+Simple Java Graphics Library:
+
+Rectangle box = new Rectangle(5, 10, 60, 80);
+box.draw();
+Ellipse egg = new Ellipse(100, 100, 40, 60);
+egg.setColor(Color.YELLOW);
+egg.fill();   
+
+You can change a shape by translating (i.e., moving) or growing it.
+
+box.translate(20, 30); // Move by 20 pixels to the right, 30 pixels down
+egg.grow(5, 5); // Grow by 5 pixels on all four sides    
+Constructing Shapes
+
+To construct a rectRectangle box = new Rectangle(20, 70, 40, 30);
+Rectangle box2 = new Rectangle(60, 70, 40, 30);
+Rectangle box3 = new Rectangle(100, 70, 40, 30);
+Rectangle box4 = new Rectangle(40, 40, 40, 30);
+Rectangle box5 = new Rectangle(80, 40, 40, 30);
+Rectangle box6 = new Rectangle(60, 10, 40, 30);
+box.draw();
+box2.draw();
+box3.draw();
+box4.draw();
+box5.draw();
+box6.draw();
+box.setColor(new Color(0, 0, 255));
+box2.setColor(new Color(255, 0, 255));
+box3.setColor(new Color(0, 255, 255));
+box4.setColor(new Color(255, 0, 0));
+box5.setColor(new Color(255, 192, 203));
+box6.setColor(new Color(125, 125, 255));
+box.fill();
+box2.fill();
+box3.fill();
+box4.fill();
+box5.fill();
+box6.fill();
+
+angle, give the x- and y- positions of the top left corner, the width, and the height. For an ellipse, give those values for the bounding box of the ellipse.
+
+Rectangle box = new Rectangle(x, y, width, height);
+Ellipse egg = new Ellipse(x, y, width, height);
+For a line, specify the end points. For text, specify the top left corner and the string to be drawn.
+
+Line segment = new Line(x1, y1, x2, y2);
+Text greeting = new Text(x, y, "Hello");    
+
+To construct a picture, provide the name of the image file, and then move it to the desired location with the translate method.
+
+Picture pic = new Picture("car.png");
+pic.translate(x, y);
+Canvas Methods
+
+All shapes are drawn on an object of type Canvas. You don't need to worry about it, but the Canvas class has a couple of convenience methods.
+
+Canvas.pause() pops up a dialog so that the drawing is stopped until the user dismisses the dialog. This can be useful when you want to see a picture before you change its pixels.
+
+Canvas.snapshot() takes a snapshot of the canvas, fades it, and sets the faded image as the canvas background. Any newer drawings appear at full intensity. By taking repeated snapshots, you can show movement.
+Pictures and Pixels
+
+The Picture class can be used to add images to scenes, or to write programs that manipulate pixels.
+
+If you want to do the latter, you can construct an empty picture as
+
+Picture pic = new Picture(width, height);
+
+You access the pixels of a picture with the methods getColorAt and setColorAt. You can use a single integer index to access the pixels.
+
+Color c = pic.getColorAt(i);
+pic.setColorAt(i, Color.RED);
+
+The index goes from 0 to pic.pixels() - 1, where pic.pixels() is the total number of pixels in the image. It is the same as pic.getWidth() * pic.getHeight().
+
+This one-dimensional index is useful if you simply want to iterate over all pixels and transform them in a uniform way, for example to make all pixels in an image redder.
+
+Alternatively, you can access pixels by their x and y coordinates, for example
+
+Color c = pic.getColorAt(x, y);
+pic.setColorAt(x, y, Color.RED);
+Rectangle box = new Rectangle(20, 70, 40, 30);
+Rectangle box2 = new Rectangle(60, 70, 40, 30);
+Rectangle box3 = new Rectangle(100, 70, 40, 30);
+Rectangle box4 = new Rectangle(40, 40, 40, 30);
+Rectangle box5 = new Rectangle(80, 40, 40, 30);
+Rectangle box6 = new Rectangle(60, 10, 40, 30);
+box.draw();
+box2.draw();
+box3.draw();
+box4.draw();
+box5.draw();
+box6.draw();
+box.setColor(new Color(0, 0, 255));
+box2.setColor(new Color(255, 0, 255));
+box3.setColor(new Color(0, 255, 255));
+box4.setColor(new Color(255, 0, 0));
+box5.setColor(new Color(255, 192, 203));
+box6.setColor(new Color(125, 125, 255));
+box.fill();
+box2.fill();
+box3.fill();
+box4.fill();
+box5.fill();
+box6.fill();
+
+
+Here, x goes from 0 to pic.getWidth() - 1 and y goes from 0 to pic.getHeight() - 1.
+Finally, you can get a two-dimensional array of gray levels between 0 and 255 with the call
+
+int[][] grays = pic.getGrayLevels()
+
+Why not an array of colors? This method is used for some practice assignments with two-dimensional arrays, and an array of int is easier to work with than an array of Color values.
+
+Note that the row index is the y-coordinate and the column index is the x-coordinate; that is, grays[y][x] is the gray level of pix.getColor(x, y).
+
+Changing to Standard Java
+
+If you can't use the simple graphics library, make these changes in your program.
+
+    Use Rectangle2D.Double, Ellipse2D.Double, Line2D.Double from the java.awt.geom package instead of Rectangle, Ellipse, Line
+    Place your drawing code inside a class
+
+    import java.awt.Graphics;
+    import java.awt.Graphics2D;
+    import javax.swing.JComponent;
+
+    public class MyComponent extends JComponent
+    {
+       public void paintComponent(Graphics g)
+       {      
+          Graphics2D g2 = (Graphics2D) g;
+          // Your drawing instructions go here
+       }
+    }
+
+    In the drawing instructions, put the code that you would have placed in main, and change all calls shape.draw() to g2.draw(shape) and shape.fill() to g2.fill(shape). However, for Text objects, there is no analogous object. Instead, use g2.drawString(x, y, messageString).
+    Use java.awt.Color instead of the Color class. Replace shape.setColor(c); with g2.setColor(c); just before drawing or filling the shape.
+    Add a class
+
+    import javax.swing.JFrame;
+
+    public class MyViewer
+    {
+       public static void main(String[] args)
+       {
+          JFrame frame = new JFrame();
+          frame.setSize(300, 400); // Change width and height as needed
+          frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLORectangle box = new Rectangle(20, 70, 40, 30);
+Rectangle box2 = new Rectangle(60, 70, 40, 30);
+Rectangle box3 = new Rectangle(100, 70, 40, 30);
+Rectangle box4 = new Rectangle(40, 40, 40, 30);
+Rectangle box5 = new Rectangle(80, 40, 40, 30);
+Rectangle box6 = new Rectangle(60, 10, 40, 30);
+box.draw();
+box2.draw();
+box3.draw();
+box4.draw();
+box5.draw();
+box6.draw();
+box.setColor(new Color(0, 0, 255));
+box2.setColor(new Color(255, 0, 255));
+box3.setColor(new Color(0, 255, 255));
+box4.setColor(new Color(255, 0, 0));
+box5.setColor(new Color(255, 192, 203));
+box6.setColor(new Color(125, 125, 255));
+box.fill();
+box2.fill();
+box3.fill();
+box4.fill();
+box5.fill();
+box6.fill();
+
+SE);
+          MyComponent component = new MyComponent();
+          frame.add(component);
+          frame.setVisible(true);
+       }
+    }
+
+Now you probably know why I supply the simple library instead :-)
+
+Rectangle box = new Rectangle(20, 70, 40, 30);
+Rectangle box2 = new Rectangle(60, 70, 40, 30);
+Rectangle box3 = new Rectangle(100, 70, 40, 30);
+Rectangle box4 = new Rectangle(40, 40, 40, 30);
+Rectangle box5 = new Rectangle(80, 40, 40, 30);
+Rectangle box6 = new Rectangle(60, 10, 40, 30);
+box.draw();
+box2.draw();
+box3.draw();
+box4.draw();
+box5.draw();
+box6.draw();
+box.setColor(new Color(0, 0, 255));
+box2.setColor(new Color(255, 0, 255));
+box3.setColor(new Color(0, 255, 255));
+box4.setColor(new Color(255, 0, 0));
+box5.setColor(new Color(255, 192, 203));
+box6.setColor(new Color(125, 125, 255));
+box.fill();
+box2.fill();
+box3.fill();
+box4.fill();
+box5.fill();
+box6.fill();
+
+
+
+
+
+
+
+
+
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import javax.swing.JComponent;
+
+public class MyComponent extends JComponent
+{
+   public void paintComponent(Graphics g)
+   {      
+      Graphics2D g2 = (Graphics2D) g;
+      // Your drawing instructions go here
+   }
+}
+import javax.swing.JFrame;
+
+public class MyViewer
+{
+   public static void main(String[] args)
+   {
+      JFrame frame = new JFrame();
+      frame.setSize(300, 400); // Change width and height as needed
+      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      MyComponent component = new MyComponent();
+      frame.add(component);
+      frame.setVisible(true);
+   }
+}
+
+=================================================
+//Its Important to test your code.
+import java.lang.String;
+import java.awt.Component;
+import java.awt.Dimension;
+
+ 	 public class RectangleDemo
+	{
+	public static void main(String args[])
+	{ 
+	 Rectangle box = new Rectangle(45, 90, 60, 90);
+    
+    box.grow(20, 20);
+    
+    System.out.println(box.getX());       System.out.println (" Expected:  25 ");   
+    System.out.println(box.getY());       System.out.println (" Expected:  70 " );  
+    System.out.println(box.getWidth());   System.out.println (" Expected: 100 " );   
+    System.out.println(box.getHeight());  System.out.println (" Expected: 130 ");  
+        
+  
+        // You need to print out the following values of box and its expected values:
+        //
+        // X, by using box.getX();
+        // Y, by using box.getY();
+        // width, by using box.getWidth();
+        // height, by using box.getHeight();
+        // 
+        // To print out a value and its expected value, use System.out.println(...);
+        // For example:
+        // System.out.println(box.getY());
+        // System.out.println("Expected: " + 50);
+        // 
+  // Print out the actual and test values below this line:
+ }
+}
+
+
+=================================================
+
+public class RectangleDemo
+{
+	public static void main(String args[])
+	{
+		Rectangle box = new Rectangle(45, 90, 60, 90);
+		box.grow(20, 20);
+        
+        // You need to print out the following values of box and its expected values:
+        //
+        // X, by using box.getX();
+        // Y, by using box.getY();
+        // width, by using box.getWidth();
+        // height, by using box.getHeight();
+        // 
+        // To print out a value and its expected value, use System.out.println(...);
+        // For example:
+        // System.out.println(box.getY());
+        // System.out.println("Expected: " + 50);
+        // 
+		// Print out the actual and test values below this line:
+	}
+}
+=================================================
+public class CopyString
+{
+	public class RectangleDemo{
+
+     public static void main(String[] args)
+     {
+     String greeting = ("Hello World!");
+     String greeting2 = greeting.toUpperCase();
+     String greeting3 = greeting.toLowerCase();
+     System.out.print(greeting + " "+ greeting2 + "  " +  greeting3);
+	}
+}
+
+=================================================
+import java.lang.String;
+import java.awt.Graphics2D;
+import java.awt.geom.Rectangle2D;
+
+public class RectangleDemo{
+
+     public static void main(String[] args)
+       {
+       Rectangle box = new Rectangle(5,10,60,90);
+       Rectangle box2 = box;
+       box.draw(); box2.draw();
+       box.translate(100,100);
+       box.draw(); box2.draw();
+
+    }
+}
+   
+=================================================
+public class HelloJello
+{
+	public static void main(String[] args)
+	{
+		String greeting = "Hello";
+		System.out.println(greeting.replace("H", "J"));
+		System.out.println(greeting);
+	}
+}
+
+Jello   replace is an accessor command
+Hello
+
+=================================================
+
+public class Cases
+{
+	public static void main(String[] args)
+	{
+	String river = "Mississippi";
+		System.out.println(river.toUpperCase());
+		System.out.println(river.toLowerCase());
+		System.out.println(river.toUpperCase().toLowerCase());
+		System.out.println(river);
+	}
+}
+
+MISSISSIPPI 
+mississippi 
+mississippi 
+Mississippi 
+=================================================
+
+
+import java.awt.Graphics2D;
+import java.awt.geom.Rectangle2D;
+
+public class RectangleDemo{
+
+    //import java.awt.Graphics2D;
+    //import java.awt.geom.Rectangle2D;
+
+
+    public static void main(String[] args)
+    {
+      
+             
+        Rectangle box = new Rectangle(60,90,20,30);
+        Rectangle box2 = new Rectangle(80,120,20,30);
+        box.draw();  
+        box2.draw();
+  ---------------------------------------    
+ 			
+			String course = "Udacity"; //do not modify this line in any way
+
+        //TODO complete the code to replace the first occurence of 'a' with an 'x'
+        //and don't forget to print it out!
+          
+        //String nsp = "ant";
+        
+	    	System.out.println (course.replace ("a" , "x")  );
+	    //System.out.println();
+        //System.out.println (nsp.replace ("a" , "x")    );
+
+  String river = "Mississippi";
+  String replace.river = river.replace("issipp", "our");
+  System.out.print(river + "  "+ river.length());
+
+
+	String river = "Mississippi";
+	System.out.println(river + "  " + river.length());
+      
+================================================
+
+import java.lang.String;
+
+public class RectangleDemo{
+
+     public static void main(String[] args)
+       {
+        String msp = "Mississippi";
+        msp = 
+	System.out.print (msp.replace ("i" , "X"));
+    }
+}
+   	myString.replace("x", "9"); 
+	// does nothing to myString
+
+	myString = myString.replace("x", "9"); // works
+
+=================================================
+
+public class EqualStrings
+{
+    public static void main(String[] args)
+    {
+        String first = "Uda";
+        String second = "city";
+        String firstAndSecond = first + second;
+        String third = "Udacity";
+        if (firstAndSecond == third)
+        {
+            System.out.println("They are the same");
+        }
+        else
+        {
+            System.out.println("firstAndSecond is "
+                               + firstAndSecond);
+        }
+    }
+}
+
+
+=================================================
+public class Cases
+{
+	public static void main(String[] args)
+	{
+		String river = "Mississippi";
+		System.out.println(river.toUpperCase());
+		System.out.println(river.toLowerCase());
+		System.out.println(river.toUpperCase());
+		System.out.println(river);
+	}
+}
+
+   System.out.println("42 + 7");
+   System.out.println(42+7);
+    System.out.print("Hello");
+     System.out.println("World");
+    
+   System.out.println("   +-------+");
+   System.out.println("   |Udacity|");
+   System.out.println("   +-------+");
+=================================================
+
+
+
